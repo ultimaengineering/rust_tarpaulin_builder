@@ -5,12 +5,12 @@ pipeline {
     }
   }
   stages {
-    stage('Test') {
+    stage('build and publish') {
       steps {
         checkout scm
         container('kaniko') {
           sh 'ulimit -n 10000'
-          sh '/kaniko/executor -f Dockerfile --destination=docker.ultimaengineering.io/rust_tarpaulin_builder:lastest'
+          sh '/kaniko/executor -f Dockerfile --destination=docker.ultimaengineering.io/rust_tarpaulin_builder:latest'
         }
       }
     }
