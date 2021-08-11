@@ -1,2 +1,2 @@
-FROM rust:1.48.0-buster
+FROM rust:1.54.0-buster
 RUN cargo install cargo-tarpaulin
